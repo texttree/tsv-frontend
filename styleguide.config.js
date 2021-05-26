@@ -7,10 +7,10 @@ let sections = [
     content: "README.md",
   },
   {
-    name: "Button Block",
+    name: "Tsv-send Block",
     components: [
-      "src/components/Button/Button.js",
-      "src/components/Button/Button.js",
+      "src/components/ErrorReport/ErrorReport.js",
+      "src/components/SendToTsv/SendToTsv.js",
     ],
   },
 ];
