@@ -1,9 +1,9 @@
 {
-  "name": "@texttree/template-rcl",
+  "name": "@texttree/tsv-frontend",
   "version": "0.1.0",
   "main": "dist/index.js",
   "license": "MIT",
-  "url": "https://github.com/texttree/template-rcl",
+  "url": "https://github.com/texttree/tsv-frontend",
   "scripts": {
     "start": "styleguidist server",
     "build": "styleguidist build",
