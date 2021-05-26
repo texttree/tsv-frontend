@@ -1,0 +1,41 @@
+{
+  "name": "@texttree/template-rcl",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "url": "https://github.com/texttree/template-rcl",
+  "scripts": {
+    "start": "styleguidist server",
+    "build": "styleguidist build",
+    "prepublishOnly": "rm -fr ./dist & babel ./src --out-dir ./dist -s inline"
+  },
+  "peerDependencies": {
+    "@material-ui/core": "^4.x",
+    "prop-types": "^15.x",
+    "react": "^17.x",
+    "react-dom": "^17.x"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-react": "^7.13.13",
+    "@material-ui/core": "^4.11.3",
+    "babel-loader": "^8.2.2",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-styleguidist": "^11.1.6",
+    "webpack": "^5.32.0"
+  },
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/texttree/template-rcl.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/texttree/template-rcl/issues"
+  },
+  "homepage": "https://github.com/texttree/template-rcl#readme"
+}
