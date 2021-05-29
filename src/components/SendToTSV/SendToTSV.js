@@ -7,10 +7,10 @@ function SendToTSV({
      bookId,
      type,
      resource,
-    //  fields:{
-    //    quote,
-    //    comment
-    //  },
+      fields:{
+        quote,
+        comment
+      },
    
   
 }) {
@@ -34,10 +34,10 @@ function SendToTSV({
       encodeURIComponent(bookId) +
       '&ref=' + 
       encodeURIComponent(reference) 
-      // '&selected=' +
-      // encodeURIComponent(quote) +
-      // '&comment=' +
-      // encodeURIComponent(comment) 
+      '&selected=' +
+      encodeURIComponent(quote) +
+      '&comment=' +
+      encodeURIComponent(comment) 
     })}
       
     handleSend()
