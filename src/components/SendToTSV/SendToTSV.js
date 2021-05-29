@@ -1,11 +1,24 @@
 import React from "react";
-
+import {Books,Types} from './config'
 
 
 function SendToTSV({
- reference
+    reference,
+    bookId,
+    type,
+    resourse,
+    fields:{
+      quote,
+      comment
+    }
+   
   
 }) {
+  
+  const checkReference = (\d+\:\d+([abc]?)(\-\d+)?[abc]?)
+  const checkBookId = (Books.includes(bookId))?true:false;
+  const checkType = (Types.includes(type))?true:false;
+  // if reference === 
 
   
    const handleSend =()=> {
@@ -27,9 +40,9 @@ function SendToTSV({
       encodeURIComponent(reference.comment) 
     })}
       
-    
+    handleSend()
   
   
-  return ( handleSend);
+  return (null );
 }
 export default SendToTSV;
