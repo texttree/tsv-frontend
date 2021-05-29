@@ -11,11 +11,8 @@ import { SendToTSV } from "@texttree/tsv-frontend";
     reference: "1:1",
     bookId: "gen",
     resource: "rlob",
+    serverLink: "https://lit-falls-48214.herokuapp.com/send-to-file",
     type: "err",
-    fields: {
-      quote: "Good Father",
-      comment: "I think",
-    },
   })}
 >
   Send

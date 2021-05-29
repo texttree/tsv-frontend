@@ -7,23 +7,20 @@ function SendToTSV({
      bookId,
      type,
      resource,
-      fields:{
-        quote,
-        comment
-      },
-   
+      fields,
+   serverLink,
   
 }) {
   
   const checkReference = (reference.match(/\d+\:\d+([abc]?)(\-\d+)?[abc]?/))?true:false;
-  const checkBookId = (Books.includes(bookId))?true:false;
-  const checkType = (Types.includes(type))?true:false;
+  const checkBookId = Books.includes(bookId);
+  const checkType = Types.includes(type);
   const checkResource = (resource.match(/^[a-z]+$/i))?true:false;
   
   if (checkReference && checkBookId && checkType && checkResource) {
    const handleSend =()=> {
   
-    fetch(reference.serverLink, {
+    fetch(serverLink, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -34,11 +31,7 @@ function SendToTSV({
       encodeURIComponent(bookId) +
       '&ref=' + 
       encodeURIComponent(reference) 
-      '&selected=' +
-      encodeURIComponent(quote) +
-      '&comment=' +
-      encodeURIComponent(comment) 
-    })}
+         })}
       
     handleSend()
   } else {
