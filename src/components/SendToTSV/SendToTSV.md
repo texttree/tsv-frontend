@@ -10,6 +10,12 @@ import { SendToTSV } from "@texttree/tsv-frontend";
   onClick={SendToTSV({
     reference: "1:1",
     bookId: "gen",
+    resource: "rlob",
+    type: "err",
+    // fields: {
+    //   quote: "Good Father",
+    //   comment: "I think",
+    // },
   })}
 >
   Send

@@ -5,12 +5,12 @@ import {Books,Types} from './config'
 function SendToTSV({
     reference,
      bookId,
-    // type,
-    // resource,
-    // fields:{
-    //   quote,
-    //   comment
-    // }
+     type,
+     resource,
+    //  fields:{
+    //    quote,
+    //    comment
+    //  },
    
   
 }) {
@@ -18,29 +18,37 @@ function SendToTSV({
   const checkReference = (reference.match(/\d+\:\d+([abc]?)(\-\d+)?[abc]?/))?true:false;
   const checkBookId = (Books.includes(bookId))?true:false;
   const checkType = (Types.includes(type))?true:false;
-  console.log(checkBookId);
+  const checkResource = (resource.match(/^[a-z]+$/i))?true:false;
+  
+  if (checkReference && checkBookId && checkType && checkResource) {
+   const handleSend =()=> {
+  
+    fetch(reference.serverLink, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body:'type=' + 
+      encodeURIComponent(resource) +
+      '&bookId=' + 
+      encodeURIComponent(bookId) +
+      '&ref=' + 
+      encodeURIComponent(reference) 
+      // '&selected=' +
+      // encodeURIComponent(quote) +
+      // '&comment=' +
+      // encodeURIComponent(comment) 
+    })}
+      
+    handleSend()
+  } else {
+    alert("Проверьте правильность написания");
+  }
 
   
-  //  const handleSend =()=> {
+
   
-  //   fetch(reference.serverLink, {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/x-www-form-urlencoded',
-  //     },
-  //     body:'type=' + 
-  //     encodeURIComponent(reference.resource) +
-  //     '&bookId=' + 
-  //     encodeURIComponent(reference.bookId) +
-  //     '&ref=' + 
-  //     encodeURIComponent(reference.chapter+':'+reference.verse) +
-  //     '&selected=' +
-  //     encodeURIComponent(reference.textSelected) +
-  //     '&comment=' +
-  //     encodeURIComponent(reference.comment) 
-  //   })}
-      
-  //   handleSend()
+  
   
   
   return (null );
