@@ -1,35 +1,50 @@
 import React from "react";
-
+import {Books,Types} from './config'
 
 
 function SendToTSV({
- reference
+    reference,
+    bookId,
+    type,
+    resource,
+    serverLink,
+    fields
+    
+  }) {
   
-}) {
-
+  const checkReference = (reference.match(/\d+\:\d+([abc]?)(\-\d+)?[abc]?/))?true:false;
+  const checkBookId = Books.includes(bookId);
+  const checkType = Types.includes(type);
+  const checkResource = (resource.match(/^[a-z]+$/i))?true:false;
+  let answerError={error: false, message:"Sending was successful"}
   
+  if (checkReference && checkBookId && checkType && checkResource) {
    const handleSend =()=> {
   
-    fetch(reference.serverLink, {
+    fetch(serverLink, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body:'type=' + 
-      encodeURIComponent(reference.resource) +
+      encodeURIComponent(resource) +
       '&bookId=' + 
-      encodeURIComponent(reference.bookId) +
+      encodeURIComponent(bookId) +
       '&ref=' + 
-      encodeURIComponent(reference.chapter+':'+reference.verse) +
-      '&selected=' +
-      encodeURIComponent(reference.textSelected) +
-      '&comment=' +
-      encodeURIComponent(reference.comment) 
-    })}
+      encodeURIComponent(reference) 
+         })}
       
-    
+    handleSend()
+  } else {
+    answerError={error:"11",message:"Incorrect format of reference"}
+  }
+
+  
+
   
   
-  return ( handleSend);
+  
+  
+  return (answerError );
 }
 export default SendToTSV;

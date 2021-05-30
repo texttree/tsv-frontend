@@ -3,14 +3,14 @@ import React, { useState } from "react";
 
 import { Button, Dialog, DialogTitle } from "@material-ui/core";
 
-import { SendToTSV } from "@texttree/tsv-frontend";
+import { SendNote } from "@texttree/tsv-frontend";
 
 const [openDialog, setOpenDialog] = useState(false);
 const [answerSend, setAnswerSend] = useState({});
 const handleclick = () => {
-  const answer = SendToTSV({
+  const answer = SendNote({
     reference: "2:1",
-    bookId: "gen",
+    bookId: "en",
     resource: "rlob",
     serverLink: "https://lit-falls-48214.herokuapp.com/send-to-file",
     type: "err",
