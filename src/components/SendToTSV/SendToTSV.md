@@ -1,20 +1,20 @@
-ObjToTsv
-
 ```jsx
 import React from "react";
+
 import Button from "@material-ui/core/Button";
+
 import { SendToTSV } from "@texttree/tsv-frontend";
 
-<Button
-  variant="contained"
-  onClick={SendToTSV({
-    reference: "1:1",
+const handleclick = () => {
+  SendToTSV({
+    reference: "2:1",
     bookId: "gen",
     resource: "rlob",
     serverLink: "https://lit-falls-48214.herokuapp.com/send-to-file",
     type: "err",
-  })}
->
-  Send
+  });
+};
+<Button variant="contained" onClick={handleclick}>
+  Send to TSV file
 </Button>;
 ```

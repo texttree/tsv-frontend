@@ -10,7 +10,7 @@ let sections = [
     name: "Tsv-send Block",
     components: [
       "src/components/ErrorReport/ErrorReport.js",
-      "src/components/SendToTsv/SendToTsv.js",
+      "src/components/SendToTsv/SendToTSV.js",
     ],
   },
 ];

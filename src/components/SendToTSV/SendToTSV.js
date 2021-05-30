@@ -4,18 +4,19 @@ import {Books,Types} from './config'
 
 function SendToTSV({
     reference,
-     bookId,
-     type,
-     resource,
-      fields,
-   serverLink,
-  
-}) {
+    bookId,
+    type,
+    resource,
+    serverLink,
+    fields
+    
+  }) {
   
   const checkReference = (reference.match(/\d+\:\d+([abc]?)(\-\d+)?[abc]?/))?true:false;
   const checkBookId = Books.includes(bookId);
   const checkType = Types.includes(type);
   const checkResource = (resource.match(/^[a-z]+$/i))?true:false;
+  const answerError={error: false, message:"Sending was successful"}
   
   if (checkReference && checkBookId && checkType && checkResource) {
    const handleSend =()=> {
@@ -35,7 +36,7 @@ function SendToTSV({
       
     handleSend()
   } else {
-    alert("Проверьте правильность написания");
+    answerError={error:"11",message:"Incorrect format of reference"}
   }
 
   
@@ -44,6 +45,6 @@ function SendToTSV({
   
   
   
-  return (null );
+  return (answerError );
 }
 export default SendToTSV;

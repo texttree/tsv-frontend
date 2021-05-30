@@ -31,11 +31,11 @@
   "description": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/texttree/template-rcl.git"
+    "url": "git+https://github.com/texttree/tsv-frontend.git"
   },
   "author": "",
   "bugs": {
-    "url": "https://github.com/texttree/template-rcl/issues"
+    "url": "https://github.com/texttree/tsv-frontend/issues"
   },
-  "homepage": "https://github.com/texttree/template-rcl#readme"
+  "homepage": "https://github.com/texttree/tsv-frontend#readme"
 }
