@@ -16,7 +16,7 @@ function SendToTSV({
   const checkBookId = Books.includes(bookId);
   const checkType = Types.includes(type);
   const checkResource = (resource.match(/^[a-z]+$/i))?true:false;
-  const answerError={error: false, message:"Sending was successful"}
+  let answerError={error: false, message:"Sending was successful"}
   
   if (checkReference && checkBookId && checkType && checkResource) {
    const handleSend =()=> {
