@@ -39,12 +39,6 @@ function SendToTSV({
     answerError={error:"11",message:"Incorrect format of reference"}
   }
 
-  
-
-  
-  
-  
-  
   return (answerError );
 }
 export default SendToTSV;
