@@ -10,10 +10,13 @@ const [answerSend, setAnswerSend] = useState({});
 const handleclick = () => {
   const answer = SendError({
     reference: "2:1",
-    bookId: "en",
+    bookId: "gen",
     resource: "rlob",
     serverLink: "https://lit-falls-48214.herokuapp.com/send-to-file",
-    type: "err",
+    fields: {
+      quote: "test1",
+      comment: "test2",
+    },
   });
   setOpenDialog(true);
   setAnswerSend(answer);
