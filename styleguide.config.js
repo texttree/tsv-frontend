@@ -1,75 +1,73 @@
-const path = require("path");
-const { name, version, url } = require("./package.json");
+const path = require('path');
+const { name, version, url } = require('./package.json');
 
 let sections = [
   {
-    name: "README",
-    content: "README.md",
+    name: 'README',
+    content: 'README.md',
   },
   {
-    name: "Tsv-send Block",
+    name: 'Tsv-send Block',
     components: [
-      
-      "src/components/SendToTsv/SendToTSV.js",
-      "src/components/SendError/SendError.js",
-      "src/components/SendNotes/SendNote.js",
+      'src/components/SendToTSV/SendToTSV.js',
+      'src/components/SendError/SendError.js',
     ],
   },
 ];
 
 module.exports = {
-  components: "src/components/**/[A-Z]*.js",
+  components: 'src/components/**/[A-Z]*.js',
   ribbon: {
     url,
-    text: "Open on GitHub",
+    text: 'Open on GitHub',
   },
   title: `${name} v${version}`,
   template: {
     head: {
       meta: [
         {
-          name: "description",
-          content: "React component library for bible reference",
+          name: 'description',
+          content: 'React component library for send user notes to TSV files',
         },
       ],
       links: [
         {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css?family=Fira+Sans:400,600",
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css?family=Fira+Sans:400,600',
         },
       ],
     },
   },
-  moduleAliases: { [name]: path.resolve(__dirname, "src") },
+  moduleAliases: { [name]: path.resolve(__dirname, 'src') },
   skipComponentsWithoutExample: true,
   sections,
   styles: {
     ComponentsList: {
       isSelected: {
-        fontWeight: "normal",
-        "&>a": {
-          fontWeight: "bold !important",
+        fontWeight: 'normal',
+        '&>a': {
+          fontWeight: 'bold !important',
         },
       },
     },
   },
   theme: {
     color: {
-      link: "#4B4E6A",
-      linkHover: "#2B3847",
-      baseBackground: "#fff",
-      border: "#D0DAE4",
-      sidebarBackground: "#fff",
+      link: '#4B4E6A',
+      linkHover: '#2B3847',
+      baseBackground: '#fff',
+      border: '#D0DAE4',
+      sidebarBackground: '#fff',
     },
     fontFamily: {
       base: '"Fira Sans", sans-serif',
     },
   },
-  exampleMode: "expand",
-  usageMode: "expand",
+  exampleMode: 'expand',
+  usageMode: 'expand',
   pagePerSection: true,
   getComponentPathLine(componentPath) {
-    const componentName = path.basename(componentPath, ".js");
+    const componentName = path.basename(componentPath, '.js');
     return `import { ${componentName} } from '${name}';`;
   },
   webpackConfig: {
@@ -78,7 +76,7 @@ module.exports = {
         {
           test: /\.js$/,
           exclude: /node_modules/,
-          loader: "babel-loader",
+          loader: 'babel-loader',
         },
       ],
     },
