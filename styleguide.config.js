@@ -9,10 +9,10 @@ let sections = [
   {
     name: "Tsv-send Block",
     components: [
-      
-      "src/components/SendToTsv/SendToTSV.js",
-      "src/components/SendError/SendError.js",
-      "src/components/SendNotes/SendNote.js",
+
+      "src/components/SendToTSV/SendToTSV.js",
+      //"src/components/SendError/SendError.js",
+      //"src/components/SendNotes/SendNote.js",
     ],
   },
 ];
@@ -29,7 +29,7 @@ module.exports = {
       meta: [
         {
           name: "description",
-          content: "React component library for bible reference",
+          content: "React component library for send user notes to TSV files",
         },
       ],
       links: [
