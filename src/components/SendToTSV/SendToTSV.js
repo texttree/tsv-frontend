@@ -81,12 +81,16 @@ function SendToTSV({ reference, bookId, type, resource, serverLink, fields }) {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body:
-        'type=' +
+        'resource=' +
         encodeURIComponent(resource) +
         '&bookId=' +
         encodeURIComponent(bookId) +
-        '&ref=' +
-        encodeURIComponent(reference),
+        '&reference=' +
+        encodeURIComponent(reference) +
+        '&type=' +
+        encodeURIComponent(type) +
+        '&fields=' +
+        encodeURIComponent(JSON.stringify(fields)),
     });
   }
 

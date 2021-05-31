@@ -7,7 +7,7 @@ import { SendError } from "@texttree/tsv-frontend";
 
 const [openDialog, setOpenDialog] = useState(false);
 const [answerSend, setAnswerSend] = useState({});
-const handleclick = () => {
+const handleClick = () => {
   const answer = SendError({
     reference: "2:1",
     bookId: "gen",
@@ -25,11 +25,11 @@ const handleClose = () => {
   setOpenDialog(false);
 };
 <>
-  <Button variant="contained" onClick={handleclick}>
+  <Button variant="contained" onClick={handleClick}>
     Send Error
   </Button>
   <Dialog open={openDialog} onClose={handleClose}>
-    <DialogTitle>{answerSend.message}</DialogTitle>
+    <DialogTitle>{JSON.stringify(answerSend)}</DialogTitle>
   </Dialog>
 </>;
 ```

@@ -1,1 +1,1 @@
-export { default } from "./SendError";
+export { default } from './SendError';
