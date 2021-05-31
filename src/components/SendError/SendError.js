@@ -1,47 +1,22 @@
-import React from "react";
+import { SendToTSV } from '../../components';
 
-import {Books} from './config'
-
-
-function SendError({
-    reference,
-    bookId,
-    resource,
-    serverLink,
-    fields
-    
-  }) {
-  
-  const checkReference = (reference.match(/\d+\:\d+([abc]?)(\-\d+)?[abc]?/))?true:false;
-  const checkBookId = Books.includes(bookId);
-  const checkResource = (resource.match(/^[a-z]+$/i))?true:false;
-  let answerError={error: false, message:"Sending was successful"}
-  
-  if (checkReference && checkBookId  && checkResource) {
-   const handleSend =()=> {
-  
-    fetch(serverLink, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body:'type=' + 
-      encodeURIComponent(resource) +
-      '&bookId=' + 
-      encodeURIComponent(bookId) +
-      '&ref=' + 
-      encodeURIComponent(reference) +
-      '&selected=' +
-      encodeURIComponent(fields.quote) +
-      '&comment=' +
-      encodeURIComponent(fields.comment) 
-         })}
-      
-    handleSend()
+function SendError({ reference, bookId, resource, serverLink, fields }) {
+  if (fields?.quote && fields?.comment) {
+    return SendToTSV({
+      reference,
+      bookId,
+      resource,
+      serverLink,
+      fields: { quote: fields.quote, comment: fields.comment },
+      type: 'err',
+    });
   } else {
-    answerError={error:"11",message:"Incorrect format of reference"}
+    return {
+      success: false,
+      code: 100,
+      message: 'Fields not set', // текстовый вариант сообщения
+      errors: [{ field: 'fields', error: 'Need quote and comment' }],
+    };
   }
-
-  return (answerError );
 }
 export default SendError;
