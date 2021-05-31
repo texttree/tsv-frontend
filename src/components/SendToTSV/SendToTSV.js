@@ -20,82 +20,25 @@ function SendToTSV({ reference, bookId, type, resource, serverLink, fields }) {
   };
 
 const checkBlock={
-  checkReference:[referenceValidation, reference],
-  checkBookId: [bookIdValidation,bookId],
-  checkType:[typeValidation,type],
-  checkResourse:[resourceValidation,resource]
+  checkReference:[referenceValidation, reference,"reference"],
+  checkBookId: [bookIdValidation,bookId,"bookId"],
+  checkType:[typeValidation,type,"type"],
+  checkResourse:[resourceValidation,resource,"resource"],
+  checkFields:[fieldsValidation,fields,"fields"],
 };
 
-
-// console.log(Object.entries(checkBlock));
-
-Object.entries(checkBlock).map( ([check,[validation,value]])=>{
+Object.entries(checkBlock).map( ([check,[validation,value,name]])=>{
 check = validation(value);
 if (check.error) {
   response.success = false;
   response.code = 100;
   response.message = 'Validation error';
   response.errors.push({
-    field: 'value',
+    field: name,
     message: check.message,
 });
 }});
 
-
-  // const checkReference = referenceValidation(reference);
-  // if (checkReference.error) {
-  //   response.success = false;
-  //   response.code = 100; // validation error
-  //   response.message = 'Validation error';
-  //   response.errors.push({
-  //     field: 'reference',
-  //     message: checkReference.message,
-  //   });
-  // }
-
-  // const checkBookId = bookIdValidation(bookId);
-  // if (checkBookId.error) {
-  //   response.success = false;
-  //   response.code = 100; // validation error
-  //   response.message = 'Validation error';
-  //   response.errors.push({
-  //     field: 'bookId',
-  //     message: checkBookId.message,
-  //   });
-  // }
-
-  // const checkType = typeValidation(type);
-  // if (checkType.error) {
-  //   response.success = false;
-  //   response.code = 100; // validation error
-  //   response.message = 'Validation error';
-  //   response.errors.push({
-  //     field: 'type',
-  //     message: checkType.message,
-  //   });
-  // }
-
-  // const checkResource = resourceValidation(resource);
-  // if (checkResource.error) {
-  //   response.success = false;
-  //   response.code = 100; // validation error
-  //   response.message = 'Validation error';
-  //   response.errors.push({
-  //     field: 'resource',
-  //     message: checkResource.message,
-  //   });
-  // }
-
-  // const checkFields = fieldsValidation(fields);
-  // if (checkFields.error) {
-  //   response.success = false;
-  //   response.code = 100; // validation error
-  //   response.message = 'Validation error';
-  //   response.errors.push({
-  //     field: 'fields',
-  //     message: checkFields.message,
-  //   });
-  // }
 
   if (response.success) {
     fetch(serverLink, {
