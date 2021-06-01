@@ -2,8 +2,7 @@
 
 The main task of the component is to send data in TSV format. The TSV file is created using the server settings and the second part of the [tsv-send-backend component](https://github.com/texttree/tsv-send-backend/).
 
-##
-SendToTSV
+## SendToTSV ##
 
 ### Using
 1. Configure the server to accept the TSV file. The instructions are here [tsv-send-backend component](https://github.com/texttree/tsv-send-backend/).
