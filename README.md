@@ -12,4 +12,4 @@ SendToTSV
 * `type` - type of sending. Now that is `['tn', 'tq', 'sn', 'sq', 'twl', 'err']`. Type of data - `string`.
 * `reference` - reference of your data. It looks like this `1:1`. Type of data - `string`
 * `bookId`- one of the 66 bookId's. It looks like this `gen`. Type of data - `string`
-* `serverLink` - the link of the configured server that transmits the data to TSV-files
+* `serverLink` - the link of the configured server that transmits the data to TSV-files.Type of data - `string`.
