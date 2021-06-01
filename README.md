@@ -6,7 +6,7 @@ The main task of the component is to send data in TSV format. The TSV file is cr
 SendToTSV
 
 ### Using
-1.Configure the server to accept the tsv file. The instructions are here [tsv-send-backend component](https://github.com/texttree/tsv-send-backend/).
+1.Configure the server to accept the TSV file. The instructions are here [tsv-send-backend component](https://github.com/texttree/tsv-send-backend/).
 2.Insert your data for transmission. The component accepts 4 required parameters:
 * `resource` - resourseId of material(rob,rlob,rsob and others). Type of data - `string`.
 * `type` - type of sending. Now that is `['tn', 'tq', 'sn', 'sq', 'twl', 'err']`. Type of data - `string`.
