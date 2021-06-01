@@ -3,20 +3,17 @@ const { name, version, url } = require('./package.json');
 
 let sections = [
   {
-    name: 'README',
-    content: 'README.md',
+    name: 'SendToTSV',
+    content: 'src/components/SendToTSV/SendToTSV.md',
   },
   {
-    name: 'Tsv-send Block',
-    components: [
-      'src/components/SendToTSV/SendToTSV.js',
-      'src/components/SendError/SendError.js',
-    ],
+    name: 'SendError',
+    content: 'src/components/SendError/SendError.md',
   },
 ];
 
 module.exports = {
-  components: 'src/components/**/[A-Z]*.js',
+//  components: 'src/components/**/[A-Z]*.js',
   ribbon: {
     url,
     text: 'Open on GitHub',
