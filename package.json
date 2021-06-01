@@ -1,5 +1,5 @@
 {
-  "name": "tsv-frontend",
+  "name": "@texttree/tsv-frontend",
   "version": "0.2.0",
   "main": "dist/index.js",
   "license": "MIT",
