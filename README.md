@@ -12,3 +12,4 @@ The main task of the component is to send data in TSV format. The TSV file is cr
 * `reference` - reference of your data. It looks like this `1:1`. Type of data - `string`
 * `bookId`- one of the 66 bookId's. It looks like this `gen`. Type of data - `string`
 * `serverLink` - the link of the configured server that transmits the data to TSV-files.Type of data - `string`.
+
