@@ -15,11 +15,18 @@ The main task of the component is to send data in TSV format. The TSV file is cr
 ### Result
 
 TSV is created on the server in this way: resourse/type_bookID. For example:
-* `resource=rsob` 
-* `type=error`
-* `reference=1:2`
-* `bookId=gen'
-* ![eror_example](https://user-images.githubusercontent.com/74174349/120419545-5f235480-c36b-11eb-828e-767b5027b03e.png)
+* `resource='rsob'` 
+* `type='error'`
+* `reference='1:2'`
+* `bookId='gen''`
+On the server it will look like this:
+
+![eror_example](https://user-images.githubusercontent.com/74174349/120419545-5f235480-c36b-11eb-828e-767b5027b03e.png)
+
+In TSV:
+
+![TSV](https://user-images.githubusercontent.com/74174349/120419901-fc7e8880-c36b-11eb-8af6-bdc4ac8f8dd7.jpg)
+
 
 
 
