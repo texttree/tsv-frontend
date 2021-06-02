@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {
   referenceValidation,
   bookIdValidation,
@@ -19,47 +20,48 @@ function SendToTSV({ reference, bookId, type, resource, serverLink, fields }) {
      * ]  */
   };
 
-const checkBlock={
-  checkReference:[referenceValidation, reference,"reference"],
-  checkBookId: [bookIdValidation,bookId,"bookId"],
-  checkType:[typeValidation,type,"type"],
-  checkResourse:[resourceValidation,resource,"resource"],
-  checkFields:[fieldsValidation,fields,"fields"],
-};
+  const checkBlock = {
+    checkReference: [referenceValidation, reference, 'reference'],
+    checkBookId: [bookIdValidation, bookId, 'bookId'],
+    checkType: [typeValidation, type, 'type'],
+    checkResourse: [resourceValidation, resource, 'resource'],
+    checkFields: [fieldsValidation, fields, 'fields'],
+  };
 
-Object.entries(checkBlock).map( ([check,[validation,value,name]])=>{
-check = validation(value);
-if (check.error) {
-  response.success = false;
-  response.code = 100;
-  response.message = 'Validation error';
-  response.errors.push({
-    field: name,
-    message: check.message,
-});
-}});
-
+  Object.entries(checkBlock).map(([check, [validation, value, name]]) => {
+    check = validation(value);
+    if (check.error) {
+      response.success = false;
+      response.code = 100;
+      response.message = 'Validation error';
+      response.errors.push({
+        field: name,
+        message: check.message,
+      });
+    }
+  });
 
   if (response.success) {
-    fetch(serverLink, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body:
-        'resource=' +
-        encodeURIComponent(resource) +
-        '&bookId=' +
-        encodeURIComponent(bookId) +
-        '&reference=' +
-        encodeURIComponent(reference) +
-        '&type=' +
-        encodeURIComponent(type) +
-        '&fields=' +
-        encodeURIComponent(JSON.stringify(fields)),
-    });
+    axios
+      .post(serverLink, {
+        type,
+        resource,
+        bookId,
+        reference,
+        fields,
+      })
+      .then((res) => {
+        return res;
+      })
+      .catch((error) => {
+        response.success = false;
+        response.code = 101;
+        response.message = 'Server error';
+        response.errors = error;
+        return response;
+      });
+  } else {
+    return response;
   }
-
-  return response;
 }
 export default SendToTSV;
