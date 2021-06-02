@@ -49,7 +49,9 @@ To transmit an error, 2 additional values are passed :
     note: // - comment of the person who found the error
     
   }`
-           
+
+### Result
+
 In TSV:
 
 ![Example](https://user-images.githubusercontent.com/74174349/120422054-2b96f900-c370-11eb-84d3-421875853791.png)
