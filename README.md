@@ -42,9 +42,13 @@ SendError extends the functionality SendToTSV. It is used to transmit errors in 
 The component accepts 5 required parameters (`resourse,reference,bookId, serverLink,fields`).
 
 To transmit an error, 2 additional values are passed :
+
  `fields: { note:` // - text of the found error
+ 
            `quote:`// - comment of the person who found the error
+           
            `}`
+           
 In TSV:
 
 ![Example](https://user-images.githubusercontent.com/74174349/120422054-2b96f900-c370-11eb-84d3-421875853791.png)
