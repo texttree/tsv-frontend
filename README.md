@@ -22,7 +22,7 @@ TSV is created on the server in this way: resourse/type_bookID. For example:
 * `type='err'`
 * `reference='1:2'`
 * `bookId='gen''`
-* `fields: {note: 'note', quote: 'quote'}`
+* `fields: {note: '', quote: ''}`
 
 On the server it will look like this:
 
