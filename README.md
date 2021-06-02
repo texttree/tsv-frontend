@@ -43,11 +43,13 @@ The component accepts 5 required parameters (`resourse,reference,bookId, serverL
 
 To transmit an error, 2 additional values are passed :
 
- `fields: { note:` // - text of the found error
+ `fields: {
  
-           `quote:`// - comment of the person who found the error
-           
-           `}`
+    note: // - text of the found error
+
+    quote: // - comment of the person who found the error
+ 
+ }`
            
 In TSV:
 
