@@ -9,7 +9,7 @@ SendToTSV is the basic component. It passes the required minimum 3 values to the
 ### Using
 1. Configure the server to accept the TSV file. The instructions are here [tsv-send-backend component](https://github.com/texttree/tsv-send-backend/).
 2. Insert your data for transmission. The component accepts 6 required parameters:
-* `resource` - resourseId of material(rob,rlob,rsob and others). Type of data - `string`.
+* `resource` - resourceId of material(rob,rlob,rsob and others). Type of data - `string`.
 * `type` - type of sending. Now that is `['tn', 'tq', 'sn', 'sq', 'twl', 'err']`. Type of data - `string`.
 * `reference` - reference of your data. It looks like this `1:1`. Type of data - `string`
 * `bookId`- one of the 66 bookId's. It looks like this `gen`. Type of data - `string`
@@ -39,7 +39,7 @@ SendError extends the functionality SendToTSV. It is used to transmit errors in 
 
 ### Using
 
-The component accepts 5 required parameters (`resourse,reference,bookId, serverLink,fields`).
+The component accepts 5 required parameters (`resource,reference,bookId, serverLink,fields`).
 
 To transmit an error, 2 additional values are passed :
 
