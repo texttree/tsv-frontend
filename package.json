@@ -37,5 +37,8 @@
   "bugs": {
     "url": "https://github.com/texttree/tsv-frontend/issues"
   },
-  "homepage": "https://github.com/texttree/tsv-frontend#readme"
+  "homepage": "https://github.com/texttree/tsv-frontend#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
 }

@@ -12,10 +12,10 @@ const handleClick = () => {
     reference: "2:1",
     bookId: "gen",
     resource: "rlob",
-    serverLink: "https://lit-falls-48214.herokuapp.com/send-to-file",
+    serverLink: "https://tsv-backend.herokuapp.com/send",
     fields: {
-      quote: "test1",
-      comment: "test2",
+      Quote: "test1",
+      Comment: "test2",
     },
   });
   setOpenDialog(true);
