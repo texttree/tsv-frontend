@@ -22,7 +22,7 @@ TSV is created on the server in this way: resourse/type_bookID. For example:
 * `type='err'`
 * `reference='1:2'`
 * `bookId='gen''`
-* `fields: {Note: '', Quote: ''}`  -It is important that the fields in the table match the parameters in the object
+* `fields: {Note: '', Quote: ''}`  -It is important that the names of fields in the table match the parameters in the object.
 
 On the server it will look like this:
 
@@ -45,8 +45,8 @@ To transmit an error, 2 additional values are passed :
 
  `fields: {
         
-    quote: // -  text of the found error
-    note: // - comment of the person who found the error
+    Quote: // -  text of the found error
+    Note: // - comment of the person who found the error
     
   }`
 
