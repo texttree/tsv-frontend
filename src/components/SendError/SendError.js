@@ -15,7 +15,7 @@ function SendError({ reference, bookId, resource, serverLink, fields }) {
       success: false,
       code: 100,
       message: "Fields not set", // текстовый вариант сообщения
-      errors: [{ field: "fields", error: "Need quote and comment" }],
+      errors: [{ field: "fields", error: "Need Quote and Note" }],
     };
   }
 }
