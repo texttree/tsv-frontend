@@ -14,8 +14,8 @@ const handleClick = () => {
     resource: "rlob",
     serverLink: "https://tsv-backend.herokuapp.com/send",
     fields: {
-      quote: "test1",
-      comment: "test2",
+      Note: "Note",
+      Quote: "Quote",
     },
   });
   setOpenDialog(true);
