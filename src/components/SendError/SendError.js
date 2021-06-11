@@ -1,4 +1,4 @@
-import { SendToTSV } from "../../components";
+import { SendToTSV } from '../../components';
 
 function SendError({ reference, bookId, resource, serverLink, fields }) {
   if (fields?.Quote && fields?.Note) {
@@ -8,14 +8,14 @@ function SendError({ reference, bookId, resource, serverLink, fields }) {
       resource,
       serverLink,
       fields: { Quote: fields.Quote, Note: fields.Note },
-      type: "err",
+      type: 'err',
     });
   } else {
     return {
       success: false,
       code: 100,
-      message: "Fields not set", // текстовый вариант сообщения
-      errors: [{ field: "fields", error: "Need Quote and Note" }],
+      message: 'Fields not set', // текстовый вариант сообщения
+      errors: [{ field: 'fields', error: 'Need Quote and Note' }],
     };
   }
 }
