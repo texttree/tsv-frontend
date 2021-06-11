@@ -13,7 +13,7 @@ let sections = [
 ];
 
 module.exports = {
-//  components: 'src/components/**/[A-Z]*.js',
+  //  components: 'src/components/**/[A-Z]*.js',
   ribbon: {
     url,
     text: 'Open on GitHub',
