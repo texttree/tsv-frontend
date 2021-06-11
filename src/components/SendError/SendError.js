@@ -11,12 +11,14 @@ function SendError({ reference, bookId, resource, serverLink, fields }) {
       type: 'err',
     });
   } else {
-    return {
-      success: false,
-      code: 100,
-      message: 'Fields not set', // текстовый вариант сообщения
-      errors: [{ field: 'fields', error: 'Need Quote and Note' }],
-    };
+    return new Promise((resolve, reject) => {
+      reject({
+        success: false,
+        code: 100,
+        message: 'Fields not set', // текстовый вариант сообщения
+        errors: [{ field: 'fields', error: 'Need Quote and Note' }],
+      });
+    });
   }
 }
 export default SendError;
