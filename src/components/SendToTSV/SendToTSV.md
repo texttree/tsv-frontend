@@ -1,13 +1,16 @@
 ```jsx
 import React, { useState } from 'react';
 
-import { Button, Dialog, DialogTitle } from '@material-ui/core';
+import { Button, Dialog, DialogTitle, CircularProgress } from '@material-ui/core';
 
 import { SendToTSV } from '@texttree/tsv-frontend';
 
 const [openDialog, setOpenDialog] = useState(false);
+const [result, setResult] = useState(false);
 const [answerSend, setAnswerSend] = useState({});
 const handleClick = () => {
+  setOpenDialog(true);
+  setResult(false);
   SendToTSV({
     reference: '2:1',
     bookId: 'gen',
@@ -18,12 +21,12 @@ const handleClick = () => {
   })
     .then((res) => {
       console.log('res', res);
-      setOpenDialog(true);
+      setResult(true);
       setAnswerSend(res);
     })
     .catch((err) => {
       console.log('err', err);
-      setOpenDialog(true);
+      setResult(true);
       setAnswerSend(err);
     });
 };
@@ -35,7 +38,9 @@ const handleClose = () => {
     Send to TSV file
   </Button>
   <Dialog open={openDialog} onClose={handleClose}>
-    <DialogTitle>{JSON.stringify(answerSend)}</DialogTitle>
+    <DialogTitle>
+      {result ? JSON.stringify(answerSend) : <CircularProgress color="inherit" />}
+    </DialogTitle>
   </Dialog>
 </>;
 ```
