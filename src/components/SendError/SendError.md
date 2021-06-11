@@ -1,21 +1,21 @@
 ```jsx
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { Button, Dialog, DialogTitle } from "@material-ui/core";
+import { Button, Dialog, DialogTitle } from '@material-ui/core';
 
-import { SendError } from "@texttree/tsv-frontend";
+import { SendError } from '@texttree/tsv-frontend';
 
 const [openDialog, setOpenDialog] = useState(false);
 const [answerSend, setAnswerSend] = useState({});
 const handleClick = () => {
   const answer = SendError({
-    reference: "2:1",
-    bookId: "gen",
-    resource: "rlob",
-    serverLink: "https://tsv-backend.herokuapp.com/send",
+    reference: '2:1',
+    bookId: 'gen',
+    resource: 'rlob',
+    serverLink: 'https://tsv-backend.herokuapp.com/send',
     fields: {
-      Note: "Note",
-      Quote: "Quote",
+      Note: 'Note',
+      Quote: 'Quote',
     },
   });
   setOpenDialog(true);
