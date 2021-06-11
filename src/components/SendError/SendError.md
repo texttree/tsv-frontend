@@ -1,14 +1,17 @@
 ```jsx
 import React, { useState } from 'react';
 
-import { Button, Dialog, DialogTitle } from '@material-ui/core';
+import { Button, Dialog, DialogTitle, CircularProgress } from '@material-ui/core';
 
 import { SendError } from '@texttree/tsv-frontend';
 
 const [openDialog, setOpenDialog] = useState(false);
+const [result, setResult] = useState(false);
 const [answerSend, setAnswerSend] = useState({});
 const handleClick = () => {
-  const answer = SendError({
+  setOpenDialog(true);
+  setResult(false);
+  SendError({
     reference: '2:1',
     bookId: 'gen',
     resource: 'rlob',
@@ -17,9 +20,17 @@ const handleClick = () => {
       Note: 'Note',
       Quote: 'Quote',
     },
-  });
-  setOpenDialog(true);
-  setAnswerSend(answer);
+  })
+    .then((res) => {
+      console.log('res', res);
+      setResult(true);
+      setAnswerSend(res);
+    })
+    .catch((err) => {
+      console.log('err', err);
+      setResult(true);
+      setAnswerSend(err);
+    });
 };
 const handleClose = () => {
   setOpenDialog(false);
@@ -29,7 +40,9 @@ const handleClose = () => {
     Send Error
   </Button>
   <Dialog open={openDialog} onClose={handleClose}>
-    <DialogTitle>{JSON.stringify(answerSend)}</DialogTitle>
+    <DialogTitle>
+      {result ? JSON.stringify(answerSend) : <CircularProgress color="inherit" />}
+    </DialogTitle>
   </Dialog>
 </>;
 ```
