@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import { Button, Dialog, DialogTitle, CircularProgress } from '@material-ui/core';
 
-import { SendError } from '@texttree/tsv-frontend';
+import { SendError } from '@texttree/user-notes-rcl';
 
 const [openDialog, setOpenDialog] = useState(false);
 const [result, setResult] = useState(false);
