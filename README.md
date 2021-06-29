@@ -11,22 +11,22 @@ SendToTSV is the basic component. It passes the required minimum 3 values to the
 1. Configure the server to accept the TSV file. The instructions are here [tsv-send-backend component](https://github.com/texttree/tsv-send-backend/).
 2. Insert your data for transmission. The component accepts 6 required parameters:
 
-- `resource` - resourceId of material(rob,rlob,rsob and others). Type of data - `string`.
+- `resource` - resourceId of material(`ru_rob`, `el-x-koine_maj-rp` and others). Type of data - `string`.
 - `type` - type of sending. Now that is `['tn', 'tq', 'sn', 'sq', 'twl', 'err']`. Type of data - `string`.
-- `reference` - reference of your data. It looks like this `1:1`. Type of data - `string`
-- `bookId`- one of the 66 bookId's. It looks like this `gen`. Type of data - `string`
-- `serverLink` - the link of the configured server that transmits the data to TSV-files.Type of data - `string`.
+- `reference` - reference of your data. It looks like this `1:1`. Type of data - `string`.
+- `bookId`- one of the 66 bookId's. It looks like this `gen`. Type of data - `string`.
+- `serverLink` - the link of the configured server that transmits the data to TSV-files. Type of data - `string`.
 - `fields` - additional parameter for for advanced components. Type of data - `object`.
 
 ### Result
 
 TSV is created on the server in this way: resourse/type_bookID. For example:
 
-- `resource='rsob'`
+- `resource='ru_rsob'`
 - `type='err'`
 - `reference='1:2'`
 - `bookId='gen''`
-- `fields: {Note: '', Quote: ''}` -It is important that the names of fields in the table match the parameters in the object.
+- `fields: {Note: '', Quote: ''}` - It is important that the names of fields in the table match the parameters in the object.
 
 On the server it will look like this:
 
@@ -42,7 +42,7 @@ SendError extends the functionality SendToTSV. It is used to transmit errors in 
 
 ### Using
 
-The component accepts 5 required parameters (`resource,reference,bookId, serverLink,fields`).
+The component accepts 5 required parameters (`resource, reference, bookId, serverLink, fields`).
 
 To transmit an error, 2 additional values are passed :
 
