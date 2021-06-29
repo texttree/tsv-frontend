@@ -1,20 +1,23 @@
 {
-  "name": "@texttree/tsv-frontend",
+  "name": "@texttree/user-notes-rcl",
   "author": "TextTree.org",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "",
   "keywords": [],
   "license": "MIT",
   "private": false,
   "main": "dist/index.js",
-  "url": "https://github.com/texttree/tsv-frontend",
-  "homepage": "https://github.com/texttree/tsv-frontend#readme",
+  "url": "https://github.com/texttree/user-notes-rcl",
+  "homepage": "https://github.com/texttree/user-notes-rcl#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/texttree/tsv-frontend.git"
+    "url": "git+https://github.com/texttree/user-notes-rcl.git"
   },
   "bugs": {
-    "url": "https://github.com/texttree/tsv-frontend/issues"
+    "url": "https://github.com/texttree/user-notes-rcl/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "lint-staged": {
     "src/**/*.js": [
