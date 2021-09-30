@@ -1,4 +1,4 @@
-import { BOOKS, TYPES } from './config';
+import { ALL_BOOKS as BOOKS, TYPES } from './config';
 
 export const referenceValidation = (reference) => {
   const result = { error: true, message: '' };

@@ -66,4 +66,9 @@ export const BOOKS = [
   'jud',
   'rev',
 ];
+
+export const OTHER_BOOKS = ['obs'];
+
+export const ALL_BOOKS = [...BOOKS, ...OTHER_BOOKS];
+
 export const TYPES = ['tn', 'tq', 'sn', 'sq', 'twl', 'err'];
