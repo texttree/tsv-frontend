@@ -73,7 +73,7 @@ export const resourceValidation = (resource) => {
     result.message = 'The field must not be empty.';
     return result;
   }
-  const regexResource = /^[a-z][a-z_-]*$/i;
+  const regexResource = /^[a-z][a-z0-9_-]*$/i;
   const checkResource = regexResource.test(resource);
   if (checkResource) {
     result.error = false;
